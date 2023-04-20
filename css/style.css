@@ -1,10 +1,31 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+    background-color: gray;
 }
-ul {
+.sub-header {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: rgba(105, 154, 191, 0.8);
+}
+.logo {
+    width: 10rem;
+}
+.center {
+    grid-column: 2/5;
+}
+.right {
+    grid-column: 5 / -1;
     display: flex;
-    justify-content: space-between;
-    list-style: none;
+    /* fex-direction + wrap */
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+@media screen and (width < 900px) {
+    .right {
+        align-items: flex-start;
+        background-color: aqua;
+    }
+    .right a, .right button {
+        width: 3rem;
+    }
 }
